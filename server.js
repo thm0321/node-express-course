@@ -10,7 +10,7 @@ const mockUserData = [
 ]
 
 app.listen(8000, function(){
-    console.log("server is running")
+    console.log("Server is running")
 })
 
 app.get('/users', function(req, res){
@@ -37,10 +37,10 @@ app.post('/login', function(req, res){
     const mockUserName = 'MichealScarn'
     const mockPassword = 'GeogreForman'
 
-    if(mockUserName === username && mockUserData === password){
+    if (mockUserName === username && mockPassword === password){
         res.json({
             success: true,
-            message: 'Welcome '.concat(username, " !"),
+            message: 'Welcome '.concat(username, "!"),
             token: 'encrypted token goes here'
         })
     }
@@ -50,4 +50,11 @@ app.post('/login', function(req, res){
             message: "You are WRONG!"
         })
     }
+})
+
+app.get('/logout', function(req, res){
+    res.json({
+        success: true,
+        message: 'That is all she wrote'
+    })
 })
